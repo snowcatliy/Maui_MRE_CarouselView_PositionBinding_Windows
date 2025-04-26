@@ -1,6 +1,6 @@
 This repository serves as a Minimal Reproducible Example (MRE) for a reported bug in .NET MAUI's `CarouselView` regarding unexpected behavior with `TwoWay` binding on the `Position` property, specifically on the Windows platform.
 
-This MRE is linked to GitHub Issue #29215 where the problem is reported and discussed in detail.
+This MRE is linked to GitHub Issue [#29215](https://github.com/dotnet/maui/issues/29215) where the problem is reported and discussed in detail.
 
 ## Problem Description
 
@@ -50,6 +50,6 @@ Clicking a button to set `CurrentTabIndex` to 0 (when currently at 1) on Windows
 
 **Related GitHub Issue:**
 
-This MRE is the reproduction project for Issue #29215 in the dotnet/maui repository. Please refer to that issue for detailed discussion, logs, and visual evidence (GIFs).
+This MRE is the reproduction project for Issue [#29215](https://github.com/dotnet/maui/issues/29215) in the dotnet/maui repository. Please refer to that issue for detailed discussion, logs, and visual evidence (GIFs).
 
-*(Note: This issue might be related to # #29216, which reports a distinct problem where `IsSwipeEnabled="False"` prevents visual navigation on Windows.)*
+*(Note: This issue might be related to [#29216](https://github.com/dotnet/maui/issues/29216), which reports a distinct problem where `IsSwipeEnabled="False"` prevents visual navigation on Windows.)*
