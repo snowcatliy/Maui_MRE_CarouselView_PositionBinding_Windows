@@ -16,15 +16,6 @@ When using `TwoWay` binding on the `CarouselView.Position` property and updating
 6.  Observe the visual behavior of the `CarouselView` (it should fail to navigate to Page 1 or jump back and forth) and check the output console for debug logs.
 7.  (Optional) Build and run the project on an **Android Emulator/Device (.NET 9)**. Repeat step 5. Observe that the visual navigation works correctly on Android despite similar log output indicating multiple binding updates.
 
-
-## Visual Evidence
-
-**Windows Behavior GIF:**
-![图片描述](windows.webp)
-
-**Android Behavior GIF:**
-![图片描述](android.webp)
-
 ## Expected Behavior
 
 Clicking a button bound to update the ViewModel's `CurrentTabIndex` property should cause the `CarouselView` to smoothly animate and visually switch to the corresponding page (e.g., from Page 2 to Page 1). The `PositionChanged` event and `TwoWay` binding should ideally only report the final target position consistently.
@@ -32,6 +23,16 @@ Clicking a button bound to update the ViewModel's `CurrentTabIndex` property sho
 ## Actual Behavior
 
 Clicking a button to set `CurrentTabIndex` to 0 (when currently at 1) on Windows results in the CarouselView failing to visually navigate and debug logs showing `ViewModel.CurrentTabIndex` and `CarouselView.Position` rapidly updating between 0 and 1 before settling back at 1.
+
+## Visual Evidence
+
+**Windows Behavior GIF:**
+
+![Windows Behavior](windows.webp)
+
+**Android Behavior GIF:**
+
+![Android Behavior](android.webp)
 
 ## Relevant Files
 
