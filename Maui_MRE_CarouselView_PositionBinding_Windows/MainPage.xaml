@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Maui_MRE_CarouselView_PositionBinding_Windows.MainPage">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <Button Grid.Column="0"
+                       Text="Page 1"
+                       Command="{Binding TabSelectedCommand}"
+                       CommandParameter="0" />
+
+            <Button Grid.Column="1"
+                       Text="Page 2"
+                       Command="{Binding TabSelectedCommand}"
+                       CommandParameter="1" />
+        </Grid>
+        <Grid Grid.Row="1">
+            <CarouselView x:Name="carouselView"
+                          Position="{Binding CurrentTabIndex, Mode=TwoWay}"
+                          PositionChanged="OnCarouselPositionChanged"
+                          IsSwipeEnabled="True"
+                          Loop="False"
+                          ItemsSource="{Binding TabItems}">
+                <CarouselView.ItemTemplate>
+                    <DataTemplate>
+                        <StackLayout>
+                            <Label Text="{Binding Title}" 
+                           FontSize="18" 
+                           HorizontalOptions="Center" />
+                        </StackLayout>
+                    </DataTemplate>
+                </CarouselView.ItemTemplate>
+            </CarouselView>
+        </Grid>
+    </Grid>
+
+</ContentPage>
